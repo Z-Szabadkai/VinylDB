@@ -2,7 +2,7 @@ package application.models;
 
 public enum Ltd_Release {
 
-    BLACK,
+    REGULAR,
     COLORED;
 
     public static Ltd_Release find(String name) {
@@ -11,6 +11,10 @@ public enum Ltd_Release {
                 return vinyl;
             }
         }
-        return Ltd_Release.BLACK;
+        return Ltd_Release.REGULAR;
+    }
+
+    public int getDBIndex() {
+        return ordinal() + 1;
     }
 }

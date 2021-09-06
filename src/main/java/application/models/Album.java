@@ -1,6 +1,6 @@
 package application.models;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 public class Album {
@@ -64,7 +64,10 @@ public class Album {
     }
 
     public Ltd_Release getLimited() {
-        return limited;
+        if (!getColor().equals("black")) {
+            return Ltd_Release.REGULAR;
+        }
+        return Ltd_Release.COLORED;
     }
 
     public void setLimited(Ltd_Release limited) {
@@ -72,9 +75,6 @@ public class Album {
     }
 
     public String getColor() {
-        if (getLimited().equals(Ltd_Release.BLACK)) {
-            return "black";
-        }
         return color;
     }
 

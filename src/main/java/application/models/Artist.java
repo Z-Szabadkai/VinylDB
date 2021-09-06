@@ -1,6 +1,6 @@
 package application.models;
 
-import java.time.Year;
+import java.sql.Date;
 import java.util.List;
 
 public class Artist {
@@ -8,12 +8,12 @@ public class Artist {
     private long id;
     private String name;
     private String origin;
-    private Year formation;
+    private Date formation;
     private boolean active;
 
     private List<Album> albums;
 
-    public Artist(String name, String origin, Year formation, boolean active) {
+    public Artist(String name, String origin, Date formation, boolean active) {
         this.name = name;
         this.origin = origin;
         this.formation = formation;
@@ -44,11 +44,11 @@ public class Artist {
         this.origin = origin;
     }
 
-    public Year getFormation() {
+    public Date getFormation() {
         return formation;
     }
 
-    public void setFormation(Year formation) {
+    public void setFormation(Date formation) {
         this.formation = formation;
     }
 
